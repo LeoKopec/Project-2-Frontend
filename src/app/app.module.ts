@@ -6,17 +6,32 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {ButtonModule} from 'primeng/button';
+import { FindByEmalComponent } from './components/find-by-email/find-by-email.component';
+import { HttpClientModule } from '@angular/common/http';
+import {TableModule} from 'primeng/table';
+import {CardModule} from 'primeng/card';
+import {InputNumberModule} from 'primeng/inputnumber';
+import {InputTextModule} from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    DashboardComponent
+    DashboardComponent,
+    FindByEmalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule,
+    TableModule,
+    CardModule,
+    InputNumberModule,
+    InputTextModule,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

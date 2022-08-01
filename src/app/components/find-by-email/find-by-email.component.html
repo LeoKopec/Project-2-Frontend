@@ -1,0 +1,32 @@
+<div>
+    <p-card>
+        <ng-template pTemplate="header">
+            <h2>Find Your Reservations</h2>
+        </ng-template>
+    <form (submit)="onChange()">
+        <label for="searchName">Enter Email:</label> <br>
+        <input type="text" pInputText name="searchName" [(ngModel)]="searchEmail"/> <br>
+        <button pButton type="submit" class="p-button-raised p-button-rounded">Submit</button>
+    </form>
+    </p-card>
+</div>
+
+<section>
+    <p-table [value]="reservations" styleClass="p-datatable-gridlines">
+        <ng-template pTemplate="header">
+            <tr><th>Guest</th><th>Hotel</th><th>City</th><th>Room</th><th>Room Size</th><th>Check-In Date</th><th>Check-Out Date</th><th>Total Price</th></tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-reservation>
+            <tr>
+                <td>{{reservation.guest.first_name}} {{reservation.guest.last_name}}</td>
+                <td>{{reservation.room.hotel.name}}</td>
+                <td>{{reservation.room.hotel.city}}</td>
+                <td>{{reservation.room.name}}</td>
+                <td>{{reservation.room.size}} Person</td>
+                <td>{{reservation.start_date | date}}</td>
+                <td>{{reservation.end_date | date}}</td>
+                <td>{{reservation.total_price | currency}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+    </section>
