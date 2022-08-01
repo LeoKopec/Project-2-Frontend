@@ -4,7 +4,14 @@
 
 export const environment = {
   production: false,
-  devUrl: 'http://localhost:8080/'
+  devUrl: 'http://localhost:8080/',
+  api: {
+    root: 'http://localhost:8080/',
+    hotel: 'hotels/',
+    room: 'rooms/',
+    guest: 'guests/',
+    reser: 'reservations/'
+  }
 };
 
 /*

@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HotelListComponent } from './components/hotel-list/hotel-list.component';
 import {ButtonModule} from 'primeng/button';
 import { FindByEmalComponent } from './components/find-by-email/find-by-email.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     PageNotFoundComponent,
     DashboardComponent,
-    FindByEmalComponent
+    FindByEmalComponent,
+    HotelListComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +32,8 @@ import { FormsModule } from '@angular/forms';
     CardModule,
     InputNumberModule,
     InputTextModule,
-    FormsModule
-    
+    FormsModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
