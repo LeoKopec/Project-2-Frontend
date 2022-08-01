@@ -1,1 +1,25 @@
-<p>hotel-list works!</p>
+<div class="card">
+    <p-dataView #dv [value]="hotels" layout="list">
+        <ng-template pTemplate="header">
+
+        </ng-template>
+        <ng-template let-hotel pTemplate="listItem">
+            <div class="hotel-list-item">
+                <div class="hotel-list-detail">
+                    <div class="hotel-name">{{hotel.name}}</div>
+                    <div class="hotel-desc">{{hotel.desc}}</div>
+                    <p-rating class="hotel-rating" [ngModel]="hotel.rate" [readonly]="true" [cancel]="false"></p-rating>
+                </div>
+                <div class="hotel-list-actionable">
+                    <div class="hotel-list-extra" style="display:flex;flex-direction:column">
+                        <span class="hotel-lowest">{{hotel.lowestPrice | currency}}</span>
+                        <span class="hotel-number">{{hotel.numberRooms}} {{hotel.numberRooms > 1 ? "Rooms": "Room"}} Available</span>
+                    </div>
+                    <div>
+                        <button pButton pRipple type="button" label="View Rooms" class="p-button-raised p-button-success p-button-text"></button>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-dataView>
+</div>

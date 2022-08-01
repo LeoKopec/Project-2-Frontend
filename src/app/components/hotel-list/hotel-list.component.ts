@@ -22,7 +22,7 @@ export class HotelListComponent implements OnInit {
   }
 
   refreshHotels(): void {
-    this.hotelService.findByParams(new Date("2022-08-24"), new Date("2022-08-25"), "New York", 2).subscribe(data => {
+    this.hotelService.findByParams(new Date("2022-08-24"), new Date("2022-08-25"), "Denver", 2).subscribe(data => {
       console.log(data);
       this.hotels = data;
     })

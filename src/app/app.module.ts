@@ -8,6 +8,10 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HotelListComponent } from './components/hotel-list/hotel-list.component';
 import {ButtonModule} from 'primeng/button';
+import {DataViewModule} from 'primeng/dataview';
+import {RatingModule} from 'primeng/rating';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import {ButtonModule} from 'primeng/button';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ButtonModule
+    ButtonModule,
+    DataViewModule,
+    RatingModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

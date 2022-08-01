@@ -1,0 +1,54 @@
+.hotel-list-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.hotel-list-detail {
+    flex: 1 1 0;
+}
+
+.hotel-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.hotel-desc {
+    margin: 0 0 1rem 0;
+}
+
+.hotel-rating {
+    margin: 0 0 .5rem 0;
+}
+
+.hotel-list-actionable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.hotel-list-extra {
+    margin-right: 1rem;
+}
+
+.hotel-list-extra>span {
+    align-self: flex-end;
+}
+
+.hotel-lowest {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.hotel-number {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.hotel-view-rooms {
+    align-self: center;
+    margin: .5rem;
+}
