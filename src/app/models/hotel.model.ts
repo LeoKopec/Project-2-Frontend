@@ -11,7 +11,7 @@ export class Hotel {
     rooms: number;
     cheapest: number;
 
-    constructor(id = 0, name = '', description = '', city = '', rate = 0, rooms = 0, cheapest = 999) {
+    constructor(id = 0, name = '', description = '', city = '', rate = 0, rooms = 0, cheapest = 0) {
         this.id = id;
         this.name = name;
         this.description = description;

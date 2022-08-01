@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -14,8 +14,13 @@ export class HotelService {
     this.http = http;
   }
 
-  findByParams() :Observable<any> {
+  findByParams(startDate: Date, endDate: Date, city: string, size: number) :Observable<any> {
     const url: string = environment.api.root + environment.api.hotel;
+    let params = new HttpParams();
+    params.append("start", dateToDateString(startDate));
+    params.append("end", dateToDateString(endDate));
+    params.append("location", city);
+    params.append("size", size);
     return this.http.get(url);
   }
 }
