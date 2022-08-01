@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +10,12 @@ import {ButtonModule} from 'primeng/button';
 import {DataViewModule} from 'primeng/dataview';
 import {RatingModule} from 'primeng/rating';
 import { CommonModule } from '@angular/common';
+import { FindByEmalComponent } from './components/find-by-email/find-by-email.component';
+import { HttpClientModule } from '@angular/common/http';
+import {TableModule} from 'primeng/table';
+import {CardModule} from 'primeng/card';
+import {InputNumberModule} from 'primeng/inputnumber';
+import {InputTextModule} from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -18,17 +23,25 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     PageNotFoundComponent,
     DashboardComponent,
+    FindByEmalComponent,
     HotelListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ButtonModule,
     HttpClientModule,
     ButtonModule,
     DataViewModule,
     RatingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    TableModule,
+    CardModule,
+    InputNumberModule,
+    InputTextModule,
+    FormsModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
