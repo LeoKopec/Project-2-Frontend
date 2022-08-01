@@ -18,4 +18,8 @@ export class ReservationService {
   findByEmail(email :string) :Observable<any> {
     return this.http.get(environment.devUrl + this.resSubUrl + email);
   }
+
+  deleteReservation(id :number) :Observable<any> {
+    return this.http.delete(environment.devUrl + this.resSubUrl + id);
+  }
 }
