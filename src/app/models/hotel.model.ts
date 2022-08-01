@@ -7,12 +7,17 @@ export class Hotel {
     description: string;
     city: string;
     rate: number;
+    // Derived values from the DTO
+    rooms: number;
+    cheapest: number;
 
-    constructor(id = 0, name = '', description = '', city = '', rate = 0) {
+    constructor(id = 0, name = '', description = '', city = '', rate = 0, rooms = 0, cheapest = 999) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.city = city;
         this.rate = rate;
+        this.rooms = rooms;
+        this.cheapest = cheapest;
     }
 }
