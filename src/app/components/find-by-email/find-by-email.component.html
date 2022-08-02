@@ -6,7 +6,9 @@
     <form (submit)="onChange()">
         <label for="searchName">Enter Email:</label> <br>
         <input type="text" pInputText name="searchName" [(ngModel)]="searchEmail"/> <br>
+        <div class="myButton">
         <button pButton type="submit" class="p-button-raised p-button-rounded">Submit</button>
+        </div>
     </form>
     </p-card>
 </div>
@@ -17,16 +19,16 @@
             <tr><th>Guest</th><th>Hotel</th><th>City</th><th>Room</th><th>Room Size</th><th>Check-In Date</th><th>Check-Out Date</th><th>Total Price</th><th></th><th></th></tr>
         </ng-template>
         <ng-template pTemplate="body" let-reservation>
-            <tr>
-                <td>{{reservation.guest.first_name}} {{reservation.guest.last_name}}</td>
-                <td>{{reservation.room.hotel.name}}</td>
-                <td>{{reservation.room.hotel.city}}</td>
-                <td>{{reservation.room.name}}</td>
-                <td>{{reservation.room.size}} Person</td>
+            <tr class="center">
+                <td>{{reservation.first_name}} {{reservation.last_name}}</td>
+                <td>{{reservation.hotel}}</td>
+                <td>{{reservation.city}}</td>
+                <td>{{reservation.room_name}}</td>
+                <td>{{reservation.room_size}} Person</td>
                 <td>{{reservation.start_date | date}}</td>
                 <td>{{reservation.end_date | date}}</td>
                 <td>{{reservation.total_price | currency}}</td>
-                <td><p-button label="Delete" icon="pi pi-trash" iconPos="center" (onClick)="onDelete()"></p-button></td>
+                <td><p-button icon="pi pi-trash" label="Cancel" iconPos="left" (onClick)="onDelete(reservation.id)"></p-button></td>
                 <td><i class="pi pi-user-edit"></i></td>
             </tr>
         </ng-template>

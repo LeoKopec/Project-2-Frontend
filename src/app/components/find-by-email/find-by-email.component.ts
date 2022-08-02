@@ -27,10 +27,15 @@ export class FindByEmalComponent implements OnInit {
     this.service.findByEmail(this.searchEmail).subscribe(data => {
       this.reservations = data;
     });
+    this.service.Refreshrequired.subscribe(response => {
+      this.service.findByEmail(this.searchEmail).subscribe(data => {
+        this.reservations = data;
+      });
+    })
   }
 
-  onDelete(): void {
-    this.service.deleteReservation(this.deleteNum).subscribe(data => {
+  onDelete(id :number): void {
+    this.service.deleteReservation(id).subscribe(data => {
       console.log(data);
     });
   }
