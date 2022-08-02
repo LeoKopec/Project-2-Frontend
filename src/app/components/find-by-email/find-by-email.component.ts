@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ReservationService } from 'src/app/services/reservation.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,10 +15,13 @@ export class FindByEmalComponent implements OnInit {
   reservations :Array<any> = [];
   deleteNum :number;
 
-  constructor(service :ReservationService) {
+  @Input() editId: number;
+
+  constructor(service :ReservationService, private router: Router) {
     this.service = service;
     this.searchEmail = '';
     this.deleteNum = 0;
+    this.editId = 0;
   }
 
   ngOnInit(): void {
@@ -38,6 +42,10 @@ export class FindByEmalComponent implements OnInit {
     this.service.deleteReservation(id).subscribe(data => {
       console.log(data);
     });
+  }
+
+  goTo(id :number) {
+    this.router.navigate(['/editReservation']);
   }
 
 }
