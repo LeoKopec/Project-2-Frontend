@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FindByEmalComponent } from './components/find-by-email/find-by-email.component';
+import { HotelSearchComponent } from './components/hotel-search/hotel-search.component';
 
-const routes: Routes = [{
-  path: 'reservations',
-  component: FindByEmalComponent
-}];
+const routes: Routes = [
+  { path: 'reservations', component: FindByEmalComponent },
+  { path: 'hotel-search', component: HotelSearchComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

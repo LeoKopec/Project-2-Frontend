@@ -17,6 +17,7 @@ import {CardModule} from 'primeng/card';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {InputTextModule} from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
+import { HotelSearchComponent } from './components/hotel-search/hotel-search.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     PageNotFoundComponent,
     DashboardComponent,
     FindByEmalComponent,
-    HotelListComponent
+    HotelListComponent,
+    HotelSearchComponent
   ],
   imports: [
     BrowserModule,

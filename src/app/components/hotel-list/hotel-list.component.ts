@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Hotel } from 'src/app/models/hotel.model';
-import { HotelListingsService } from 'src/app/services/hotel-listings.service';
 
 @Component({
   selector: 'app-hotel-list',
@@ -10,13 +9,12 @@ import { HotelListingsService } from 'src/app/services/hotel-listings.service';
 })
 export class HotelListComponent implements OnInit {
 
-  hotelSubscription!: Subscription;
-  hotels: Array<Hotel> = [];
+  @Input() hotels: Array<Hotel> = [];
 
-  constructor(private hotelListService: HotelListingsService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.hotelSubscription = this.hotelListService.currentHotelList.subscribe((hotels: Hotel[]) => this.hotels = hotels)
+
   }
 
 }
