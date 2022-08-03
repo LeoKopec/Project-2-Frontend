@@ -1,0 +1,25 @@
+<div>
+    <p-dataView #dv [value]="rooms" layout="list">
+        <ng-template pTemplate="header">
+
+        </ng-template>
+        <ng-template let-room pTemplate="listItem">
+            <div class="room-list-item">
+                <div class="room-list-detail">
+                    <div class="room-name">{{room.hotel.name}}</div>
+                    <div class="room-desc">{{room.hotel.desc}}</div>
+                    <p-rating class="room-rating" [ngModel]="room.rate" [readonly]="true" [cancel]="false"></p-rating>
+                </div>
+                <div class="room-list-actionable">
+                    <div class="room-list-extra" style="display:flex;flex-direction:column">
+                        <span class="room-number">Room {{room.name}}</span>
+                        <span class="room-total">{{totalPrice(room.prices) | currency}}</span>
+                    </div>
+                    <div>
+                        <button pButton pRipple type="button" label="Make Reservation" class="p-button-raised p-button-success p-button-text"></button>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-dataView>
+</div>

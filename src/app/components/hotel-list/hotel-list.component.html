@@ -8,7 +8,7 @@
                 <div class="hotel-list-detail">
                     <div class="hotel-name">{{hotel.name}}</div>
                     <div class="hotel-desc">{{hotel.desc}}</div>
-                    <p-rating class="hotel-rating" [ngModel]="roundRating(hotel.rate)" [readonly]="true" [cancel]="false"></p-rating>
+                    <p-rating class="hotel-rating" [ngModel]="roundRating(hotel)" [readonly]="true" [cancel]="false"></p-rating>
                 </div>
                 <div class="hotel-list-actionable">
                     <div class="hotel-list-extra" style="display:flex;flex-direction:column">
@@ -16,7 +16,7 @@
                         <span class="hotel-number">{{hotel.numberRooms}} {{hotel.numberRooms > 1 ? "Rooms": "Room"}} Available</span>
                     </div>
                     <div>
-                        <button pButton pRipple type="button" label="View Rooms" class="p-button-raised p-button-success p-button-text"></button>
+                        <button pButton pRipple type="button" label="View Rooms" class="p-button-raised p-button-success p-button-text" (click)="onHotelRoomsRequest(hotel)"></button>
                     </div>
                 </div>
             </div>
