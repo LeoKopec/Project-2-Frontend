@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { dateToDateString } from './date-conversion';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,9 @@ export class ReservationService {
   http :HttpClient;
   resSubUrl :string = 'reservations/'
   editSubUrl :string = 'reservations/changes/'
+  roomsSubUrl :string = "rooms/"
   refreshrequired = new Subject<void>;
+  
 
 get Refreshrequired() {
   return this.refreshrequired;
@@ -43,5 +46,13 @@ get Refreshrequired() {
         this.Refreshrequired.next();
       })
     );
+  }
+
+  findPrice(id: number, startDate :string, endDate :string) :Observable<any> {
+    let params = new HttpParams();
+    params = params.append("start", startDate);
+    params = params.append("end", endDate); 
+    return this.http.get(environment.devUrl + this.roomsSubUrl + id, {params:params})
+
   }
 }

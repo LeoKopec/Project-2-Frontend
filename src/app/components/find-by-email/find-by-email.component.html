@@ -29,55 +29,23 @@
                 <td class="text-center">{{reservation.end_date | date}}</td>
                 <td class="text-center">{{reservation.total_price | currency}}</td>
                 <td class="text-center"><p-button icon="pi pi-trash" label="Cancel" iconPos="left" (onClick)="onDelete(reservation.id)"></p-button></td>
-                <td class="text-center"><p-button icon="pi pi-user-edit" label="Edit" iconPos="left" (onClick)="changeValue(reservation.id)"></p-button></td>
+                <td class="text-center"><p-button icon="pi pi-user-edit" label="Change Dates" iconPos="left" (onClick)="changeValue(reservation.id); convertRes(reservation)"></p-button></td>
             </tr>
         </ng-template>
     </p-table>
     </section>
 
-<div>
     <p-card *ngIf="myReservation">
         <ng-template pTemplate="header">
-            <h2>Log New Shipment</h2>
+            <h2>Enter Your New Travel Dates</h2>
         </ng-template>
-    <form (submit)="submit(updatedReservation, editId)">
-        <label for="reservationId">Reservation ID:</label> <br>
-        <p-inputNumber name="reservationId" [(ngModel)]="updatedReservation.id"></p-inputNumber><br>
-        <label for="guestId">Guest ID:</label> <br>
-        <p-inputNumber name="guestId" [(ngModel)]="updatedReservation.guest_id"></p-inputNumber> <br>
-        <label for="firstName">First Name:</label> <br>
-        <input type="text" pInputText name="firstName" [(ngModel)]="updatedReservation.first_name"/> <br>
-        <label for="lastName">Last Name:</label> <br>
-        <input type="text" pInputText name="lastName" [(ngModel)]="updatedReservation.last_name"/> <br>
-        <label for="email">Email:</label> <br>
-        <input type="text" pInputText name="email" [(ngModel)]="updatedReservation.email"/> <br>
-        <label for="phone">Phone:</label> <br>
-        <input type="text" pInputText name="phone" [(ngModel)]="updatedReservation.phone"/> <br>
-        <label for="roomId">Room ID:</label> <br>
-        <p-inputNumber name="roomId" [(ngModel)]="updatedReservation.room_id"></p-inputNumber> <br>
-        <label for="hotelId">Hotel ID:</label> <br>
-        <p-inputNumber name="hotelId" [(ngModel)]="updatedReservation.hotel_id"></p-inputNumber> <br>
-        <label for="hotelName">Hotel:</label> <br>
-        <input type="text" pInputText name="hotelName" [(ngModel)]="updatedReservation.hotel"/> <br>
-        <label for="hotelDesc">Hotel Description:</label> <br>
-        <input type="text" pInputText name="hotelDesc" [(ngModel)]="updatedReservation.desc"/> <br>
-        <label for="hotelCity">Hotel City:</label> <br>
-        <input type="text" pInputText name="hotelCity" [(ngModel)]="updatedReservation.city"/> <br>
-        <label for="hotelRating">Hotel Rating:</label> <br>
-        <p-inputNumber name="hotelRating" mode="decimal" [minFractionDigits]="2" [(ngModel)]="updatedReservation.rating"></p-inputNumber> <br>
-        <label for="roomName">Room Name:</label> <br>
-        <input type="text" pInputText name="roomName" [(ngModel)]="updatedReservation.room_name"/> <br>
-        <label for="roomSize">Room Size:</label> <br>
-        <p-inputNumber name="roomSize" [(ngModel)]="updatedReservation.room_size"></p-inputNumber> <br>
+    <form (submit)="getPrice(updatedReservation.start_date, updatedReservation.end_date, updatedReservation.room_id)">
         <label for="startDate">Start Date:</label> <br>
         <input type="text" pInputText name="startDate" [(ngModel)]="updatedReservation.start_date"/> <br>
         <label for="endDate">End Date:</label> <br>
         <input type="text" pInputText name="endDate" [(ngModel)]="updatedReservation.end_date"/> <br>
-        <label for="totalPrice">Total Price:</label> <br>
-        <p-inputNumber name="totalPrice" mode="decimal" [minFractionDigits]="2" [(ngModel)]="updatedReservation.total_price"></p-inputNumber> <br>
         <button pButton type="submit" class="p-button-raised p-button-rounded">Submit</button>
     </form>
     </p-card>
-</div>
 
-    <!-- <app-edit-reservation [editId]="editId"></app-edit-reservation> -->
+
