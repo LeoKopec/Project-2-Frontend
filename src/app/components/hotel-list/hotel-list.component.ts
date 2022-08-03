@@ -17,4 +17,8 @@ export class HotelListComponent implements OnInit {
 
   }
 
+  roundRating(n: number): number {
+    return Math.round(n);
+  }
+
 }

@@ -1,4 +1,4 @@
-<div class="card">
+<div>
     <p-dataView #dv [value]="hotels" layout="list">
         <ng-template pTemplate="header">
 
@@ -8,7 +8,7 @@
                 <div class="hotel-list-detail">
                     <div class="hotel-name">{{hotel.name}}</div>
                     <div class="hotel-desc">{{hotel.desc}}</div>
-                    <p-rating class="hotel-rating" [ngModel]="hotel.rate" [readonly]="true" [cancel]="false"></p-rating>
+                    <p-rating class="hotel-rating" [ngModel]="roundRating(hotel.rate)" [readonly]="true" [cancel]="false"></p-rating>
                 </div>
                 <div class="hotel-list-actionable">
                     <div class="hotel-list-extra" style="display:flex;flex-direction:column">
