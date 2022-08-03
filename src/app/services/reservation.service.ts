@@ -10,6 +10,7 @@ export class ReservationService {
 
   http :HttpClient;
   resSubUrl :string = 'reservations/'
+  editSubUrl :string = 'reservations/changes/'
   refreshrequired = new Subject<void>;
 
 get Refreshrequired() {
@@ -29,8 +30,18 @@ get Refreshrequired() {
       tap(()=>{
         this.Refreshrequired.next();
       })
-      
-    
+    );
+  }
+
+  findById(id :number) :Observable<any> {
+    return this.http.get(environment.devUrl + this.editSubUrl + id);
+  }
+
+  updateReservation(reservation :any, id :number) :Observable<any> {
+    return this.http.put(environment.devUrl + this.resSubUrl + id, reservation).pipe(
+      tap(()=>{
+        this.Refreshrequired.next();
+      })
     );
   }
 }
