@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Hotel } from 'src/app/models/hotel.model';
-import { HotelService } from 'src/app/services/hotel.service';
 
 @Component({
   selector: 'app-hotel-list',
@@ -9,23 +9,12 @@ import { HotelService } from 'src/app/services/hotel.service';
 })
 export class HotelListComponent implements OnInit {
 
-  hotelService: HotelService;
-  hotels: Array<Hotel> = [];
+  @Input() hotels: Array<Hotel> = [];
 
-  constructor(hotelService: HotelService) {
-    this.hotelService = hotelService;
-  }
+  constructor() { }
 
   ngOnInit(): void {
-    this.refreshHotels();
-    console.log(this.hotels);
-  }
 
-  refreshHotels(): void {
-    this.hotelService.findByParams(new Date("2022-08-24"), new Date("2022-08-25"), "Denver", 2).subscribe(data => {
-      console.log(data);
-      this.hotels = data;
-    })
   }
 
 }
