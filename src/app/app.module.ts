@@ -17,7 +17,7 @@ import {CardModule} from 'primeng/card';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {InputTextModule} from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
-import { HotelVisualComponent } from './hotel-visual/hotel-visual.component';
+
 import { VisualfrontComponent } from './visualfront/visualfront.component';
 
 @NgModule({
@@ -27,7 +27,7 @@ import { VisualfrontComponent } from './visualfront/visualfront.component';
     DashboardComponent,
     FindByEmalComponent,
     HotelListComponent,
-    HotelVisualComponent,
+  
     VisualfrontComponent
   ],
   imports: [
