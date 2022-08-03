@@ -16,21 +16,36 @@
 <section>
     <p-table [value]="reservations" styleClass="p-datatable-gridlines">
         <ng-template pTemplate="header">
-            <tr><th>Guest</th><th>Hotel</th><th>City</th><th>Room</th><th>Room Size</th><th>Check-In Date</th><th>Check-Out Date</th><th>Total Price</th><th></th><th></th></tr>
+            <tr><th class="text-center">Guest</th><th class="text-center">Hotel</th><th class="text-center">City</th><th class="text-center">Room</th><th class="text-center">Room Size</th><th class="text-center">Check-In Date</th><th class="text-center">Check-Out Date</th><th class="text-center">Total Price</th><th></th><th></th></tr>
         </ng-template>
         <ng-template pTemplate="body" let-reservation>
             <tr class="center">
-                <td>{{reservation.first_name}} {{reservation.last_name}}</td>
-                <td>{{reservation.hotel}}</td>
-                <td>{{reservation.city}}</td>
-                <td>{{reservation.room_name}}</td>
-                <td>{{reservation.room_size}} Person</td>
-                <td>{{reservation.start_date | date}}</td>
-                <td>{{reservation.end_date | date}}</td>
-                <td>{{reservation.total_price | currency}}</td>
-                <td><p-button icon="pi pi-trash" label="Cancel" iconPos="left" (onClick)="onDelete(reservation.id)"></p-button></td>
-                <td><i class="pi pi-user-edit"></i></td>
+                <td class="text-center">{{reservation.first_name}} {{reservation.last_name}}</td>
+                <td class="text-center">{{reservation.hotel}}</td>
+                <td class="text-center">{{reservation.city}}</td>
+                <td class="text-center">{{reservation.room_name}}</td>
+                <td class="text-center">{{reservation.room_size}} Person</td>
+                <td class="text-center">{{reservation.start_date | date}}</td>
+                <td class="text-center">{{reservation.end_date | date}}</td>
+                <td class="text-center">{{reservation.total_price | currency}}</td>
+                <td class="text-center"><p-button icon="pi pi-trash" label="Cancel" iconPos="left" (onClick)="onDelete(reservation.id)"></p-button></td>
+                <td class="text-center"><p-button icon="pi pi-user-edit" label="Change Dates" iconPos="left" (onClick)="changeValue(reservation.id); convertRes(reservation)"></p-button></td>
             </tr>
         </ng-template>
     </p-table>
     </section>
+
+    <p-card *ngIf="myReservation">
+        <ng-template pTemplate="header">
+            <h2>Enter Your New Travel Dates</h2>
+        </ng-template>
+    <form (submit)="getPrice(updatedReservation.start_date, updatedReservation.end_date, updatedReservation.room_id)">
+        <label for="startDate">Start Date:</label> <br>
+        <input type="text" pInputText name="startDate" [(ngModel)]="updatedReservation.start_date"/> <br>
+        <label for="endDate">End Date:</label> <br>
+        <input type="text" pInputText name="endDate" [(ngModel)]="updatedReservation.end_date"/> <br>
+        <button pButton type="submit" class="p-button-raised p-button-rounded">Submit</button>
+    </form>
+    </p-card>
+
+
