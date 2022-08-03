@@ -18,7 +18,6 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import {InputTextModule} from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { HotelSearchComponent } from './components/hotel-search/hotel-search.component';
-import { EditReservationComponent } from './components/edit-reservation/edit-reservation.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import { EditReservationComponent } from './components/edit-reservation/edit-res
     FindByEmalComponent,
     HotelListComponent,
     HotelSearchComponent,
-    EditReservationComponent
   ],
   imports: [
     BrowserModule,

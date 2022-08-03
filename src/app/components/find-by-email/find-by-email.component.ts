@@ -16,14 +16,13 @@ export class FindByEmalComponent implements OnInit {
   editId :number;
   myReservation :any;
   updatedReservation :any = {};
-  price :number;
+  price :number = 0;
 
   constructor(service :ReservationService, private router: Router) {
     this.service = service;
     this.searchEmail = '';
     this.deleteNum = 0;
     this.editId = 0;
-    this.price = 0;
 
   }
 
@@ -71,8 +70,10 @@ export class FindByEmalComponent implements OnInit {
 
   getPrice(startDate :string, endDate :string, id :number) {
     this.service.findPrice(id, startDate, endDate).subscribe(data => {
+      console.log(data);
       this.price = data;
-    })
+      this.updatedReservation.total_price = this.price;
+    });
     console.log(this.price);
   }
 
