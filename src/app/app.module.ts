@@ -18,6 +18,7 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import {InputTextModule} from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { HotelVisualComponent } from './hotel-visual/hotel-visual.component';
+import { VisualfrontComponent } from './visualfront/visualfront.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HotelVisualComponent } from './hotel-visual/hotel-visual.component';
     DashboardComponent,
     FindByEmalComponent,
     HotelListComponent,
-    HotelVisualComponent
+    HotelVisualComponent,
+    VisualfrontComponent
   ],
   imports: [
     BrowserModule,
