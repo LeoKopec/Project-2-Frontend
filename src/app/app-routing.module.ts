@@ -7,16 +7,18 @@ import { HotelListComponent } from './components/hotel-list/hotel-list.component
 import { HotelSearchComponent } from './components/hotel-search/hotel-search.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { BookReservationComponent } from './components/book-reservation/book-reservation.component';
 
 const routes: Routes = [
   { path: 'reservations', component: FindByEmalComponent },
   { path: 'hotel-search', component: HotelSearchComponent },
   { path: 'hotel-rooms', component: HotelRoomsComponent },
   // { path: 'edit-reservation', component: EditReservationComponent},
-  { path: 'hotel-list', component: HotelListComponent},
   { path: 'error', component: PageNotFoundComponent },
-  { path: 'home', redirectTo: '/' },
-  { path: 'dashboard', component: DashboardComponent}
+  { path: 'home', redirectTo: 'dashboard' },
+  { path: 'dashboard', component: DashboardComponent},
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'book-reservation', component: BookReservationComponent}
 ];
 
 @NgModule({
