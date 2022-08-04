@@ -20,7 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { HotelSearchComponent } from './components/hotel-search/hotel-search.component';
 import { HotelRoomsComponent } from './components/hotel-rooms/hotel-rooms.component';
 import { RoomListComponent } from './components/room-list/room-list.component';
-import { EditReservationComponent } from './components/edit-reservation/edit-reservation.component';
+// import { EditReservationComponent } from './components/edit-reservation/edit-reservation.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { EditReservationComponent } from './components/edit-reservation/edit-res
     HotelSearchComponent,
     HotelRoomsComponent,
     RoomListComponent,
-    EditReservationComponent
+    // EditReservationComponent
   ],
   imports: [
     BrowserModule,
