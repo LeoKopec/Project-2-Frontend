@@ -12,7 +12,7 @@ export class RoomService {
   constructor(private http: HttpClient) { }
 
   findByParams(hotelId: number, startDate: Date, endDate: Date, size: number) :Observable<any> {
-    const url: string = environment.api.root + environment.api.hotel + "/" + hotelId + environment.api.room;
+    const url: string = environment.api.root + environment.api.hotel + hotelId + "/" + environment.api.room;
     let params = new HttpParams();
     params = params.append("start", dateToDateString(startDate));
     params = params.append("end", dateToDateString(endDate));
