@@ -28,7 +28,6 @@ export class HotelListComponent implements OnInit {
     let queryParams: {[x: string]: unknown} = {hotel: hotel.id}
     let currParams = this.route.snapshot.queryParamMap;
     for (const prop of ['start', 'end', 'size']) {
-      console.log(prop)
       if (currParams.has(prop)) {
         queryParams[prop] = currParams.get(prop);
       }
