@@ -23,6 +23,8 @@ import { RoomListComponent } from './components/room-list/room-list.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 // import { EditReservationComponent } from './components/edit-reservation/edit-reservation.component';
 
+import { VisualfrontComponent } from './visualfront/visualfront.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,6 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     HotelRoomsComponent,
     RoomListComponent,
     SearchbarComponent,
-    // EditReservationComponent
   ],
   imports: [
     BrowserModule,

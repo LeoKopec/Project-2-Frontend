@@ -1,0 +1,55 @@
+.mainphoto {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: 0px;
+
+  width: 80%;
+  height: 500px;
+
+  border-radius: 3px;
+  border-style: solid;
+  border-color: gray;
+}
+.easy {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin-left: 160px;
+  padding-top: 20px;
+  margin-bottom: 25px;
+  color: rgb(95, 95, 95);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 120px;
+}
+
+.header {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.photo {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.photo:hover {
+  background-color: rgb(95, 95, 95);
+  border-radius: 15px;
+}
+.smallblue {
+  margin-top: 10px;
+  color: blue;
+  text-decoration: underline;
+}
+
+.middletext {
+  color: rgb(92, 91, 91);
+}
