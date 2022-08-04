@@ -1,6 +1,9 @@
 <div class="center-column-container">
     <div class="center-column">
         <p-card>
+            <app-searchbar></app-searchbar>
+        </p-card>
+        <p-card>
             <ng-template pTemplate="content">
                 <app-hotel-list [hotels]="hotels" [start]="start" [end]="end"></app-hotel-list>
             </ng-template>
