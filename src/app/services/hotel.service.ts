@@ -20,4 +20,9 @@ export class HotelService {
     params = params.append("size", size);
     return this.http.get(url, {params: params});
   }
+
+  findById(id: number) :Observable<any> {
+    const url: string = environment.api.root + environment.api.hotel + id;
+    return this.http.get(url)
+  }
 }
