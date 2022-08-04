@@ -19,4 +19,12 @@ export class RoomService {
     params = params.append("size", size);
     return this.http.get(url, {params: params});
   }
+
+  findById(roomId: number, startDate: Date, endDate: Date) {
+    const url: string = environment.api.root + environment.api.room + roomId
+    let params = new HttpParams();
+    params = params.append("start", dateToDateString(startDate));
+    params = params.append("end", dateToDateString(endDate));
+    return this.http.get(url, {params: params});
+  }
 }
