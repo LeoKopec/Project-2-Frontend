@@ -22,8 +22,8 @@ import { HotelRoomsComponent } from './components/hotel-rooms/hotel-rooms.compon
 import { RoomListComponent } from './components/room-list/room-list.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 // import { EditReservationComponent } from './components/edit-reservation/edit-reservation.component';
+import { VisualfrontComponent } from './components/visualfront/visualfront.component';
 
-import { VisualfrontComponent } from './visualfront/visualfront.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +36,7 @@ import { VisualfrontComponent } from './visualfront/visualfront.component';
     HotelRoomsComponent,
     RoomListComponent,
     SearchbarComponent,
+    VisualfrontComponent
   ],
   imports: [
     BrowserModule,
