@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Hotel } from 'src/app/models/hotel.model';
+import { roundRating } from 'src/app/services/value-adjustment';
 
 @Component({
   selector: 'app-hotel-list',
@@ -18,9 +19,7 @@ export class HotelListComponent implements OnInit {
 
   }
 
-  roundRating(hotel: Hotel): number {
-    return Math.round(hotel.rate);
-  }
+  roundRating = roundRating
 
   onHotelRoomsRequest(hotel: Hotel) {
     let queryParams: {[x: string]: unknown} = {hotel: hotel.id}
