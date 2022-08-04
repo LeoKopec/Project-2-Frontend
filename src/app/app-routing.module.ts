@@ -6,6 +6,7 @@ import { HotelRoomsComponent } from './components/hotel-rooms/hotel-rooms.compon
 import { HotelListComponent } from './components/hotel-list/hotel-list.component';
 import { HotelSearchComponent } from './components/hotel-search/hotel-search.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'reservations', component: FindByEmalComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'hotel-list', component: HotelListComponent},
   { path: 'error', component: PageNotFoundComponent },
   { path: 'home', redirectTo: '/' },
+  { path: 'dashboard', component: DashboardComponent}
 ];
 
 @NgModule({
