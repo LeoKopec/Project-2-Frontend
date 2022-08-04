@@ -10,6 +10,18 @@
   border-radius: 10%;
 }
 
+#start {
+  width: 20%;
+}
+
+#end {
+  width: 20%;
+}
+
+#size {
+  width: 10%;
+}
+
 /* Set a style for the submit button */
 .btn {
   background-color: dodgerblue;
