@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Hotel } from 'src/app/models/hotel.model';
-import { roundRating } from 'src/app/services/value-adjustment';
+import { nightlyPrice, roundRating } from 'src/app/services/value-adjustment';
 
 @Component({
   selector: 'app-hotel-list',
@@ -12,6 +12,9 @@ import { roundRating } from 'src/app/services/value-adjustment';
 export class HotelListComponent implements OnInit {
 
   @Input() hotels: Array<Hotel> = [];
+  @Input() start!: Date;
+  @Input() end!: Date;
+  nightlyPrice = nightlyPrice;
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 

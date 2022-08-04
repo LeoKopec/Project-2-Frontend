@@ -11,6 +11,8 @@ import { HotelService } from 'src/app/services/hotel.service';
 export class HotelSearchComponent implements OnInit {
 
   hotels: Array<Hotel> = [];
+  start: Date = new Date();
+  end: Date = new Date();
 
   constructor(private router: Router, private route: ActivatedRoute, private hotelService: HotelService) { }
 
@@ -31,9 +33,11 @@ export class HotelSearchComponent implements OnInit {
     let params = this.route.snapshot.queryParamMap;
     if (params.has('start') && params.has('end') && params.has('location') && params.has('size')) {
       // Retrieve the list of hotels
+      this.start = new Date(params.get('start') as string);
+      this.end = new Date(params.get('end') as string);
       this.hotelService.findByParams(
-        new Date(params.get('start') as string),
-        new Date(params.get('end') as string),
+        this.start,
+        this.end,
         params.get('location') as string,
         parseInt(params.get('size') as string)
       ).subscribe(data => {

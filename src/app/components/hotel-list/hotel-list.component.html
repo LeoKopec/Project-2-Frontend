@@ -12,7 +12,7 @@
                 </div>
                 <div class="hotel-list-actionable">
                     <div class="hotel-list-extra" style="display:flex;flex-direction:column">
-                        <span class="hotel-lowest">{{hotel.lowestPrice | currency}}</span>
+                        <span><span class="hotel-nightly">{{nightlyPrice(hotel.lowestPrice, start, end) | currency:'USD':'symbol':'1.0-0'}}</span><span>/night</span></span>
                         <span class="hotel-number">{{hotel.numberRooms}} {{hotel.numberRooms > 1 ? "Rooms": "Room"}} Available</span>
                     </div>
                     <div>
