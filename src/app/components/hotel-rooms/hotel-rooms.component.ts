@@ -17,7 +17,7 @@ export class HotelRoomsComponent implements OnInit {
   ngOnInit(): void {
     // Check for room search parameters
     let params = this.route.snapshot.queryParamMap;
-    if (params.has('start') && params.has('end') && params.has('location') && params.has('size')) {
+    if (params.has('start') && params.has('end') && params.has('hotel') && params.has('size')) {
       // Retrieve the list of hotels
       this.roomService.findByParams(
         parseInt(params.get('hotel') as string),
@@ -26,9 +26,9 @@ export class HotelRoomsComponent implements OnInit {
         parseInt(params.get('size') as string)
       ).subscribe(data => {
         this.rooms = data
-        this.rooms = this.rooms.filter(room => {
-          return true;
-        });
+        // this.rooms = this.rooms.filter(room => {
+        //   return true;
+        // });
       });
 
     }

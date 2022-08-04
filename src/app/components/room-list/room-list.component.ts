@@ -16,8 +16,8 @@ export class RoomListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  totalPrice(prices: Array<Price>): number {
-    return 0;
+  totalPrice(prices: Array<number>): number {
+    return prices.reduce((prev, curr) => prev + curr);
   }
 
 }
