@@ -1,1 +1,12 @@
 @import "~primeng/resources/primeng.min.css";
+.navbar-light {
+    background-color: #852196;
+    margin-bottom: 2.5%;
+    box-shadow: 0px 2px 5px #777;
+}
+.nav-item {
+    font-size: x-large !important;
+}
+.navbar-brand {
+    color: black;
+}

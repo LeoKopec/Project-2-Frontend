@@ -1,0 +1,32 @@
+
+<h3 class="info">Book with us</h3>
+
+<form class="form-inline">
+
+	<div class="form-group" style="position: relative; margin: auto; ">
+		
+		<i class="pi pi-map-marker" id="icon"></i>
+    	
+		<input type="text" class="form-control" id="city" name="city" placeholder="Where?" [(ngModel)]="city" required>
+		<input type="date" class="form-control" id="start" name="start" [(ngModel)]="start" placeholder="Check in" required>
+		<input type="date" class="form-control" id="end" name="end" [(ngModel)]="end" placeholder="Check out" required>
+		
+		<i class="pi pi-user" id="icon"></i>
+		
+		<input type="number" class="form-control" min="1" id="size" name="size" [(ngModel)]="size" placeholder="Room size">
+		
+		<button type="submit" class="btn btn-default" (click)="goToListings()" name="redirect">
+			<span class="pi pi-search"></span>
+			
+			<!-- <div *ngIf="city.errors?.['required']">
+				Name is required.
+			  </div> -->
+		</button>
+	</div>
+
+</form>
+
+
+<script>
+	document.getElementById("current_date").innerHTML = Date();
+</script>
