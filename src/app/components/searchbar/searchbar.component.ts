@@ -35,9 +35,7 @@ export class SearchbarComponent implements OnInit {
   goToListings(): void {
     this.params = [this.city, this.start, this.end, this.size];
     console.log(this.params)
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
-      this.router.navigate(['/hotel-search'], { queryParams: { start: this.start, end: this.end, location: this.city, size: this.size } })
-    );
+    this.router.navigate(['/hotel-search'], { queryParams: { start: this.start, end: this.end, location: this.city, size: this.size } });
   }
 
 }

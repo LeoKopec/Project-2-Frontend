@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { Hotel } from 'src/app/models/hotel.model';
 import { HotelService } from 'src/app/services/hotel.service';
 
@@ -15,6 +15,18 @@ export class HotelSearchComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private hotelService: HotelService) { }
 
   ngOnInit(): void {
+    this.refreshHotels();
+
+    //Bind to event on query params update
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        console.log(event);
+        this.refreshHotels();
+      }
+    });
+  }
+
+  refreshHotels() {
     // Check for hotel search parameters
     let params = this.route.snapshot.queryParamMap;
     if (params.has('start') && params.has('end') && params.has('location') && params.has('size')) {
@@ -30,7 +42,6 @@ export class HotelSearchComponent implements OnInit {
           return hotel.lowestPrice > 0;
         });
       });
-
     }
   }
 
