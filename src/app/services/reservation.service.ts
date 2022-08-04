@@ -25,11 +25,11 @@ get Refreshrequired() {
   }
 
   findByEmail(email :string) :Observable<any> {
-    return this.http.get(environment.devUrl + this.resSubUrl + email);
+    return this.http.get(environment.api.root + environment.api.reser + email);
   }
 
   deleteReservation(id :number) :Observable<any> {
-    return this.http.delete(environment.devUrl + this.resSubUrl + id).pipe(
+    return this.http.delete(environment.api.root + environment.api.reser + id).pipe(
       tap(()=>{
         this.Refreshrequired.next();
       })
@@ -37,11 +37,11 @@ get Refreshrequired() {
   }
 
   findById(id :number) :Observable<any> {
-    return this.http.get(environment.devUrl + this.editSubUrl + id);
+    return this.http.get(environment.api.root + environment.api.reser + 'changes/' + id);
   }
 
   updateReservation(reservation :any, id :number) :Observable<any> {
-    return this.http.put(environment.devUrl + this.resSubUrl + id, reservation).pipe(
+    return this.http.put(environment.api.root + environment.api.reser + id, reservation).pipe(
       tap(()=>{
         this.Refreshrequired.next();
       })
@@ -52,7 +52,7 @@ get Refreshrequired() {
     let params = new HttpParams();
     params = params.append("start", startDate);
     params = params.append("end", endDate); 
-    return this.http.get(environment.devUrl + this.roomsSubUrl + id, {params:params})
+    return this.http.get(environment.api.root + environment.api.room + id + '/pricing', {params:params})
 
   }
 }
