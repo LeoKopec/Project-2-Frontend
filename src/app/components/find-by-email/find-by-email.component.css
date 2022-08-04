@@ -13,18 +13,32 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
 }
+.title2{
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #495057;
+}
 label {
     font-weight: 400;
     font-size: 1.2rem;
 }
-.bottom {
+.content {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     margin-left: 15%;
     margin-right: 15%;
 }
 .update {
-    margin-right: 0%;
+    margin-right: 5%;
     float: left;
 }
 .confirm {
     float: left;
+    margin-left: 5%;
 }

@@ -1,72 +1,78 @@
 <body>
-<div class="search">
-    <p-card>
-        <ng-template pTemplate="header">
-            <h2>Find Your Reservations</h2>
-        </ng-template>
-    <form (submit)="onChange()">
-        <label class="labels" for="searchName">Enter Email:</label> <br>
-        <input type="text" pInputText name="searchName" [(ngModel)]="searchEmail"/> <br>
-        <div class="myButton">
-        <button pButton type="submit" class="p-button-raised p-button-rounded p-button-success">Submit</button>
-        </div>
-    </form>
-    </p-card>
-</div>
+    <div class="search">
+        <p-card>
+            <ng-template pTemplate="header">
+            </ng-template>
+            <div class="title">Find Your Reservations</div>
+            <hr>
+            <form (submit)="onChange()">
+                <label class="labels" for="searchName">Enter Email:</label> <br>
+                <input type="text" pInputText name="searchName" [(ngModel)]="searchEmail"/> <br>
+                <div class="myButton">
+                    <button pButton type="submit" class="p-button-raised p-button-rounded p-button-success">Submit</button>
+                </div>
+            </form>
+        </p-card>
+    </div>
 
-<section>
-    <p-table [value]="reservations" styleClass="p-datatable-gridlines">
-        <ng-template pTemplate="header">
-            <tr><th class="text-center">Guest</th><th class="text-center">Hotel</th><th class="text-center">City</th><th class="text-center">Room</th><th class="text-center">Room Size</th><th class="text-center">Check-In Date</th><th class="text-center">Check-Out Date</th><th class="text-center">Total Price</th><th></th><th></th></tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-reservation>
-            <tr class="center">
-                <td class="text-center">{{reservation.first_name}} {{reservation.last_name}}</td>
-                <td class="text-center">{{reservation.hotel}}</td>
-                <td class="text-center">{{reservation.city}}</td>
-                <td class="text-center">{{reservation.room_name}}</td>
-                <td class="text-center">{{reservation.room_size}} Person</td>
-                <td class="text-center">{{reservation.start_date | date}}</td>
-                <td class="text-center">{{reservation.end_date | date}}</td>
-                <td class="text-center">{{reservation.total_price | currency}}</td>
-                <td class="text-center"><button pButton label="Cancel" icon="pi pi-trash" iconPos="left" class="p-button-raised p-button-rounded p-button-danger" (click)="onDelete(reservation.id)"></button></td>
-                <td class="text-center"><button pButton label="Change Dates" icon="pi pi-user-edit" iconPos="left" class="p-button-raised p-button-rounded p-button-warning" (click)="changeValue(reservation.id); convertRes(reservation)"></button></td>
-                <!-- <td class="text-center"><p-button icon="pi pi-user-edit" label="Change Dates" iconPos="left" (onClick)="changeValue(reservation.id); convertRes(reservation)"></p-button></td> -->
-            </tr>
-        </ng-template>
-    </p-table>
+    <section>
+        <hr>
+        <div class="title2">Here Are Your Reservations:</div>
+        <p-table [value]="reservations" styleClass="p-datatable-gridlines">
+            <ng-template pTemplate="header">
+                <tr><th class="text-center">Guest</th><th class="text-center">Hotel</th><th class="text-center">City</th><th class="text-center">Room</th><th class="text-center">Room Size</th><th class="text-center">Check-In Date</th><th class="text-center">Check-Out Date</th><th class="text-center">Total Price</th><th></th><th></th></tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-reservation>
+                <tr class="center">
+                    <td class="text-center">{{reservation.first_name}} {{reservation.last_name}}</td>
+                    <td class="text-center">{{reservation.hotel}}</td>
+                    <td class="text-center">{{reservation.city}}</td>
+                    <td class="text-center">{{reservation.room_name}}</td>
+                    <td class="text-center">{{reservation.room_size}} Person</td>
+                    <td class="text-center">{{reservation.start_date | date}}</td>
+                    <td class="text-center">{{reservation.end_date | date}}</td>
+                    <td class="text-center">{{reservation.total_price | currency}}</td>
+                    <td class="text-center"><button pButton label="Cancel" icon="pi pi-trash" iconPos="left" class="p-button-raised p-button-rounded p-button-danger" (click)="onDelete(reservation.id)"></button></td>
+                    <td class="text-center"><button pButton label="Change Dates" icon="pi pi-user-edit" iconPos="left" class="p-button-raised p-button-rounded p-button-warning" (click)="changeValue(reservation.id); convertRes(reservation)"></button></td>
+                </tr>
+            </ng-template>
+        </p-table>
+        <hr>
     </section>
-<div class="bottom">
-<div class="update"></div>
-    <p-card *ngIf="myReservation" [style]="{width: '400px'}">
-        <ng-template pTemplate="header">
-        </ng-template>
-        <div class="title">Enter Your New Travel Dates</div>
-    <form (submit)="getPrice(updatedReservation.start_date, updatedReservation.end_date, updatedReservation.room_id)">
-        <label class="labels" for="startDate">Check-In Date:</label> <br>
-        <input type="text" pInputText name="startDate" [(ngModel)]="updatedReservation.start_date"/> <br>
-        <label class="labels" for="endDate">Check-Out Date:</label> <br>
-        <input type="text" pInputText name="endDate" [(ngModel)]="updatedReservation.end_date"/> <br>
-        <div class="myButton">
-        <button pButton type="submit" class="p-button-raised p-button-rounded p-button-success">Submit</button>
-        </div>
-    </form>
-    </p-card>
 
-<div class="confirm">
-    <p-card *ngIf="price">
-        <ng-template pTemplate="header">
-            <h2>New Price</h2>
-        </ng-template>
-    New Price: {{price | currency}}
-    <form (submit)="submit(updatedReservation, updatedReservation.id)">
-        <div class="myButton">
-        <button pButton type="submit" class="p-button-raised p-button-rounded p-button-success">Submit</button>
+    <div class="flex-container">
+        <div class="update"></div>
+            <p-card *ngIf="myReservation" [style]="{width: '400px'}">
+                <ng-template pTemplate="header">
+                </ng-template>
+                <div class="title">Enter Your New Travel Dates</div>
+                <hr>
+                <form (submit)="getPrice(updatedReservation.start_date, updatedReservation.end_date, updatedReservation.room_id)">
+                    <label class="labels" for="startDate">Check-In Date:</label> <br>
+                    <input type="text" pInputText name="startDate" [(ngModel)]="updatedReservation.start_date"/> <br>
+                    <label class="labels" for="endDate">Check-Out Date:</label> <br>
+                    <input type="text" pInputText name="endDate" [(ngModel)]="updatedReservation.end_date"/> <br>
+                    <div class="myButton">
+                        <button pButton type="submit" class="p-button-raised p-button-rounded p-button-success">Submit</button>
+                     </div>
+                </form>
+            </p-card>
+
+        <div class="confirm">
+            <p-card *ngIf="price">
+                <ng-template pTemplate="header">
+                </ng-template>
+                <div class="title">Would You Like to Book the Room?</div>
+                <hr>
+                <div class="content">New Price: {{price | currency}}</div>
+                <form (submit)="submit(updatedReservation, updatedReservation.id)">
+                    <div class="myButton">
+                        <button pButton type="submit" class="p-button-raised p-button-rounded p-button-success">Book!</button>
+                    </div>
+                </form>
+            </p-card>
         </div>
-    </form>
-    </p-card>
-</div>
-</div>
+    </div>
 </body>
 
 
