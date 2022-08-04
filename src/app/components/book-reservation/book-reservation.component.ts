@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Reservation } from 'src/app/models/reservation.model';
 
 @Component({
   selector: 'app-book-reservation',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-reservation.component.css']
 })
 export class BookReservationComponent implements OnInit {
+
+  newReservation!: Reservation;
 
   constructor() { }
 
