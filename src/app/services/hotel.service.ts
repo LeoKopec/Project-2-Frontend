@@ -9,11 +9,7 @@ import { dateToDateString } from './date-conversion';
 })
 export class HotelService {
 
-  http: HttpClient;
-
-  constructor(http: HttpClient) {
-    this.http = http;
-  }
+  constructor(private http: HttpClient) { }
 
   findByParams(startDate: Date, endDate: Date, city: string, size: number) :Observable<any> {
     const url: string = environment.api.root + environment.api.hotel;
@@ -22,7 +18,11 @@ export class HotelService {
     params = params.append("end", dateToDateString(endDate));
     params = params.append("location", city);
     params = params.append("size", size);
-    console.log(params);
     return this.http.get(url, {params: params});
+  }
+
+  findById(id: number) :Observable<any> {
+    const url: string = environment.api.root + environment.api.hotel + id;
+    return this.http.get(url)
   }
 }

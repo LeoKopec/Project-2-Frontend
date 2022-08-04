@@ -1,0 +1,16 @@
+<div class="center-column-container">
+    <div class="center-column">
+        <p-card>
+            <div class="hotel-info">
+                <div class="hotel-name">{{hotel.name}}</div>
+                <div class="hotel-desc">{{hotel.desc}}</div>
+                <p-rating class="hotel-rating" [ngModel]="roundedRating" [readonly]="true" [cancel]="false"></p-rating>
+            </div>
+        </p-card>
+        <p-card>
+            <ng-template pTemplate="content">
+                <app-room-list [rooms]="rooms"></app-room-list>
+            </ng-template>
+        </p-card>
+    </div>
+</div>

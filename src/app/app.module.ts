@@ -18,7 +18,10 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import {InputTextModule} from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { HotelSearchComponent } from './components/hotel-search/hotel-search.component';
-import { EditReservationComponent } from './components/edit-reservation/edit-reservation.component';
+import { HotelRoomsComponent } from './components/hotel-rooms/hotel-rooms.component';
+import { RoomListComponent } from './components/room-list/room-list.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+// import { EditReservationComponent } from './components/edit-reservation/edit-reservation.component';
 
 import { VisualfrontComponent } from './visualfront/visualfront.component';
 
@@ -29,7 +32,10 @@ import { VisualfrontComponent } from './visualfront/visualfront.component';
     DashboardComponent,
     FindByEmalComponent,
     HotelListComponent,
-
+    HotelSearchComponent,
+    HotelRoomsComponent,
+    RoomListComponent,
+    SearchbarComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+.hotel-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel-name {
+    font-size: 3rem;
+}
+
+.hotel-desc {
+    margin: 1rem;
+}
+
+.hotel-rating {
+    align-self: flex-end;
+}

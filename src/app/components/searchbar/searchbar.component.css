@@ -1,0 +1,36 @@
+@import "~primeicons/primeicons.css";
+
+/* Style the form icons */
+#icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+  border-radius: 10%;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.form-control {
+    border-radius: 5%;
+    border-color: bisque;
+    
+}
+
+.info {
+    color: rgb(84, 28, 137);
+    font-family: fantasy;
+
+}
