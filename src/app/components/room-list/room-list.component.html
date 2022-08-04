@@ -14,7 +14,7 @@
                         <span class="room-total room-list-detail">{{totalPrice(room.prices) | currency}}</span>
                     </div>
                     <div>
-                        <button pButton pRipple type="button" label="Make Reservation" class="p-button-raised p-button-success p-button-text"></button>
+                        <button pButton pRipple type="button" label="Make Reservation" class="p-button-raised p-button-success p-button-text" (click)="onRoomReservation(room)"></button>
                     </div>
                 </div>
             </div>
