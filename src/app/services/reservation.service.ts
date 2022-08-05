@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Reservation } from '../models/reservation.model';
 import { dateToDateString } from './date-conversion';
 
 @Injectable({
@@ -54,5 +55,9 @@ get Refreshrequired() {
     params = params.append("end", endDate); 
     return this.http.get(environment.devUrl + this.roomsSubUrl + id, {params:params})
 
+  }
+
+  saveReservation(newReservaton:Reservation){
+    return this.http.post(environment.devUrl + this.resSubUrl , newReservaton)
   }
 }
