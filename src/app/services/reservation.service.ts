@@ -16,9 +16,9 @@ export class ReservationService {
   refreshrequired = new Subject<void>;
   
 
-get Refreshrequired() {
-  return this.refreshrequired;
-}
+  get Refreshrequired() {
+    return this.refreshrequired;
+  }
 
   constructor(http :HttpClient) {
     this.http = http;
@@ -54,5 +54,13 @@ get Refreshrequired() {
     params = params.append("end", endDate); 
     return this.http.get(environment.api.root + environment.api.room + id + '/pricing', {params:params})
 
+  }
+
+  makeReservation(reservation :any) :Observable<any> {
+    return this.http.post(environment.api.root + environment.api.reser, reservation).pipe(
+      tap(()=>{
+        this.Refreshrequired.next();
+      })
+    );
   }
 }
