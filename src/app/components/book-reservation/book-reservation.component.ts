@@ -5,7 +5,7 @@ import { Reservation } from 'src/app/models/reservation.model';
 import { Room } from 'src/app/models/room.model';
 import { HotelService } from 'src/app/services/hotel.service';
 import { RoomService } from 'src/app/services/room.service';
-
+import { ReservationService } from 'src/app/services/reservation.service';
 @Component({
   selector: 'app-book-reservation',
   templateUrl: './book-reservation.component.html',
@@ -16,12 +16,18 @@ export class BookReservationComponent implements OnInit {
   hotel?: Hotel;
   room?: Room;
   newReservation!: Reservation;
+ 
+  
+
 
   constructor(
     private route: ActivatedRoute,
     private hotelService: HotelService,
-    private roomService: RoomService
-    ) { }
+    private roomService: RoomService,
+    private Resservice:ReservationService
+    ) { 
+  
+    }
 
   ngOnInit(): void {
     this.getReservationData();
@@ -52,6 +58,13 @@ export class BookReservationComponent implements OnInit {
       //   }
       // });
     }
+  }
+  saveRes(newReservation:Reservation){
+    this.Resservice.makeReservation(newReservation).subscribe(data=>{
+      console.log(data)
+    })
+    
+
   }
 
 }
