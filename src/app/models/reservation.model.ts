@@ -41,4 +41,6 @@ import { Hotel } from "./hotel.model";
         this.end_date = endDate;
         this.total_price = totalPrice;
     }
+
+    
 }

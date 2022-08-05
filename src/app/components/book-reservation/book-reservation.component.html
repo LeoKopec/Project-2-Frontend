@@ -1,1 +1,19 @@
-<p>book-reservation works!</p>
+
+<form (ngSubmit)="saveRes(newReservation);bookreservation.reset()" id="bookreservation" #bookreservation> 
+
+ 
+
+  <label for="firstName">First Name</label>
+  <input pInputText type="text" name="firstName" [(ngModel)]="newReservation.first_name" />
+
+  <label for="lastName">Last Name</label>
+  <input pInputText type="text" name="lastName" [(ngModel)]="newReservation.last_name" />
+
+  <label for="email">email</label>
+  <input pInputText type="text" name="email" [(ngModel)]="newReservation.email" />
+
+  <label for="phone">phone</label>
+  <p-inputMask  name ="phone" mask="99-9999"  [(ngModel)]="newReservation.phone"></p-inputMask>
+
+  <input pInputText type="submit" value="Submit" />
+</form>

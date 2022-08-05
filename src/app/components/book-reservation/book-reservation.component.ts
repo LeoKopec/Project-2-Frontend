@@ -4,6 +4,7 @@ import { ReservationService } from 'src/app/services/reservation.service';
 import { FormsModule } from '@angular/forms';
 import { Guest } from 'src/app/models/guest.model';
 import { Room } from 'src/app/models/room.model';
+
 @Component({
   selector: 'app-book-reservation',
   templateUrl: './book-reservation.component.html',
@@ -12,11 +13,12 @@ import { Room } from 'src/app/models/room.model';
 export class BookReservationComponent implements OnInit {
 
   newReservation: Reservation;
+  
   service:ReservationService;
   
   constructor(service:ReservationService,newReservation:Reservation) {
     this.service=service;
-    this.newReservation=newReservation
+    this.newReservation=newReservation;
 
 
    }
