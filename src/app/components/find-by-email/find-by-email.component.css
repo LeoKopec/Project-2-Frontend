@@ -6,8 +6,9 @@ body {
     margin-right: 10%;
 }
 .search {
-    margin-left: 35%;
-    margin-right: 35%;
+    margin-left: 10%;
+    margin-right: 10%;
+    float: right;
 }
 .title{
     font-size: 1.5rem;
@@ -30,7 +31,6 @@ label {
 .flex-container {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
     margin-left: 15%;
     margin-right: 15%;
 }
@@ -41,4 +41,14 @@ label {
 .confirm {
     float: left;
     margin-left: 5%;
+}
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.photo {
+    border-radius: 3px;
+    border-style: solid;
+    border-color: black;
 }
