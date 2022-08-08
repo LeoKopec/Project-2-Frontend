@@ -1,47 +1,63 @@
-<form
+
+<form style="text-align: center;" 
+  class="formInput"
   (ngSubmit)="saveRes(); bookreservation.reset()"
   id="bookreservation"
   #bookreservation
 >
-  <label for="firstName">First Name</label>
+
+ <div class="formgroup" >
+  <h1 class="restext">Reservation Confirmation</h1>
+  <ul><label style="padding: 10px;"  for="firstName">First Name</label>
+
   <input
     pInputText
     type="text"
     name="firstName"
+    placeholder="First Name"
+    required
     [(ngModel)]="firstName"
-  />
+  /></ul>
 
-  <label for="lastName">Last Name</label>
+  <ul> <label style="padding: 10px;" for="lastName">Last Name</label>
   <input
     pInputText
     type="text"
     name="lastName"
+    placeholder="Last Name"
+    required
     [(ngModel)]="lastName"
-  />
+  /></ul>
 
-  <label for="email">email</label>
+  <ul><label style="padding: 10px;" for="email">Email</label>
   <input
     pInputText
-    type="text"
+    type="email"
     name="email"
+    placeholder="abc@Gmail.com"
+    id="email"
+    required
     [(ngModel)]="email"
-  />
+  /> </ul>
 
-  <label for="phone">phone</label>
-  <!-- <p-inputMask -->
-    <input
+  <ul><label style="padding: 10px;" for="phone">phone</label>
+ 
+  <input pInputText
     name="phone"
     mask="99-9999"
     type="tel"
-
+    placeholder="999-999-9999"
     [(ngModel)]="phone"
   />
-  <!-- ></p-inputMask> -->
+ 
+  </ul>
+  <input class="button"pInputText type="submit" value="Submit" />
+  <hr
+  style="height: 30px; border-width: 0; color: rgb(197, 195, 195); background-color: rgb(197, 195, 195)"
+/>
+</div>
 
-  <input pInputText type="submit" value="Submit" />
 </form>
-
-
 
 <!-- 
     hotel id from the url and map it to the hotel's name
