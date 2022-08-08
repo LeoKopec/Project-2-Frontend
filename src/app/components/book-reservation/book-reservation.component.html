@@ -1,5 +1,5 @@
 <form
-  (ngSubmit)="saveRes(newReservation); bookreservation.reset()"
+  (ngSubmit)="saveRes(); bookreservation.reset()"
   id="bookreservation"
   #bookreservation
 >
@@ -8,7 +8,7 @@
     pInputText
     type="text"
     name="firstName"
-    [(ngModel)]="newReservation.first_name"
+    [(ngModel)]="firstName"
   />
 
   <label for="lastName">Last Name</label>
@@ -16,7 +16,7 @@
     pInputText
     type="text"
     name="lastName"
-    [(ngModel)]="newReservation.last_name"
+    [(ngModel)]="lastName"
   />
 
   <label for="email">email</label>
@@ -24,15 +24,43 @@
     pInputText
     type="text"
     name="email"
-    [(ngModel)]="newReservation.email"
+    [(ngModel)]="email"
   />
 
   <label for="phone">phone</label>
-  <p-inputMask
+  <!-- <p-inputMask -->
+    <input
     name="phone"
     mask="99-9999"
-    [(ngModel)]="newReservation.phone"
-  ></p-inputMask>
+    type="tel"
+
+    [(ngModel)]="phone"
+  />
+  <!-- ></p-inputMask> -->
 
   <input pInputText type="submit" value="Submit" />
 </form>
+
+
+
+<!-- 
+    hotel id from the url and map it to the hotel's name
+    reservation date from url and map it to the reservation date to be displayed
+    room id from the url and map it to the room's number
+    price from the previous card
+    edit the phone submission form
+ -->
+
+<!-- <form style="text-align: center;">
+
+  <div class="form-group">
+    <li><input type="text" name="firstName" id="firstName" [(ngModel)]="firstName" placeholder="first name" /></li>
+    <li><input type="text" name="lastName" id="lastName" [(ngModel)]="lastName" placeholder="last name" /></li>
+    <li><input type="email" name="email" id="email" [(ngModel)]="email" placeholder="email" /></li>
+    <li><input type="text" name="phone" id="phone" [(ngModel)]="phone" placeholder="phone" /></li>
+    <button type="submit" class="btn p-button-raised" (click)="makeReservation()">
+      <span class="pi pi-check"></span>
+    </button>
+  </div>
+
+</form> -->

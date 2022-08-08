@@ -27,4 +27,5 @@ export class RoomService {
     params = params.append("end", dateToDateString(endDate));
     return this.http.get(url, {params: params});
   }
+
 }
