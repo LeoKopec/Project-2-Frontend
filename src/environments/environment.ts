@@ -10,7 +10,8 @@ export const environment = {
     hotel: 'hotels/',
     room: 'rooms/',
     guest: 'guests/',
-    reser: 'reservations/'
+    reser: 'reservations/',
+    roomForRes: 'rooms/room/'
   }
 };
 

@@ -4,10 +4,9 @@ import { Hotel } from "./hotel.model";
 
 
 // export interface Reservation {
-    export class Reservation {
+export class Reservation {
 
     id?: number;
-    guest_id: number;
     first_name: string;
     last_name: string;
     email: string;
@@ -24,12 +23,11 @@ import { Hotel } from "./hotel.model";
     end_date: Date;
     total_price: number;
 
-    constructor(guest: Guest, room: Room, startDate: Date, endDate: Date, totalPrice: number, hotel: Hotel) {
-        this.guest_id = guest.id;
+    constructor(guest: Guest = new Guest(), room: Room = new Room(), startDate: Date = new Date(), endDate: Date = new Date(), totalPrice: number = 0, hotel: Hotel = new Hotel()) {
         this.first_name = guest.first_name;
         this.last_name = guest.last_name;
         this.email = guest.email;
-        this.phone = guest.number;
+        this.phone = guest.phone;
         this.room_id = room.id;
         this.hotel_id = hotel.id;
         this.hotel = hotel.name;
