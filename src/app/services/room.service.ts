@@ -28,8 +28,4 @@ export class RoomService {
     return this.http.get(url, {params: params});
   }
 
-  findRoomForRes(roomId: number): Observable<any> {
-    const url: string = environment.api.root + environment.api.roomForRes + roomId
-    return this.http.get(url);
-  }
 }

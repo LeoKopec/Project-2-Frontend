@@ -19,11 +19,11 @@ export class Reservation {
     rating?: number;
     room_name: string;
     room_size: number;
-    start_date: Date;
-    end_date: Date;
+    start_date: string;
+    end_date: string;
     total_price: number;
 
-    constructor(guest: Guest = new Guest(), room: Room = new Room(), startDate: Date = new Date(), endDate: Date = new Date(), totalPrice: number = 0, hotel: Hotel = new Hotel()) {
+    constructor(guest: Guest = new Guest(), room: Room = new Room(), startDate: string = '2000-01-01', endDate: string = '2000-01-01', totalPrice: number = 0, hotel: Hotel = new Hotel()) {
         this.first_name = guest.first_name;
         this.last_name = guest.last_name;
         this.email = guest.email;
